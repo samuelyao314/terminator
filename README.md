@@ -132,7 +132,6 @@ service
 
 
 ##  第三方模块
-* [sds](https://github.com/antirez/sds), Redis 作者维护的，非常好用的C字符串库
 * [lua-zset](https://github.com/xjdrew/lua-zset), Lua 的sorted set实现。基于Redis 的skiplist源码
 * [lua-cjson](https://github.com/openresty/lua-cjson), 高性能的JSON解析器和编码器
 * [lua-cmsgpack](https://github.com/antirez/lua-cmsgpack), C语言实现的msgpack解析器和编码器
