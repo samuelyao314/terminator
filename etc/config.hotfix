@@ -1,0 +1,17 @@
+-- 测试：热更新机制
+thread = 1
+logger = nil
+harbor = 0
+lualoader = "skynet/lualib/loader.lua"
+bootstrap = "snlua bootstrap"   -- The service for bootstrap
+
+start = "hotfix"  -- main script
+
+lua_cpath = "luaclib/?.so;skynet/luaclib/?.so"
+lua_path =  "lualib/?.lua;lualib/3rd/?.lua;skynet/lualib/?.lua;"
+
+luaservice = "service/?/init.lua;skynet/service/?.lua"
+cpath = "cservice/?.so;skynet/cservice/?.so"
+
+preload="lualib/bw/preload.lua"
+run_env="dev"  --开发环境

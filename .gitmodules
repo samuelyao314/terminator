@@ -1,0 +1,18 @@
+[submodule "skynet"]
+	path = skynet
+	url = https://github.com/cloudwu/skynet
+[submodule "thirdparty/hotfix"]
+	path = thirdparty/hotfix
+	url = https://github.com/jinq0123/hotfix
+[submodule "thirdparty/lua-cjson"]
+	path = thirdparty/lua-cjson
+	url = https://github.com/cloudwu/lua-cjson
+[submodule "thirdparty/lua-cmsgpack"]
+	path = thirdparty/lua-cmsgpack
+	url = https://github.com/samuelyao314/lua-cmsgpack
+[submodule "thirdparty/lua-zset"]
+	path = thirdparty/lua-zset
+	url = https://github.com/xjdrew/lua-zset
+[submodule "thirdparty/luafilesystem"]
+	path = thirdparty/luafilesystem
+	url = https://github.com/keplerproject/luafilesystem/
