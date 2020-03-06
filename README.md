@@ -126,9 +126,36 @@ service
 
 
 ## 单步调试
+结合 VSCode 的插件[Skynet Debugger](https://github.com/colinsusie/skynetda), 本项目支持单步调试。 
 
-*TODO*
+例如服务 chat，进行单步调试。 VSCode 的配置文件 launch.json 设置如下
 
+```json
+{
+    // 这个版本号，根据实际的插件版本号，进行修改
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "skynet debugger",
+            "type": "lua",
+            "request": "launch",
+            "program": "${workspaceFolder}/skynet",
+            "config": "../etc/config.chat"
+        }
+    ]
+}
+```
+
+启动配置 config.chat 里，确定有以下4行配置
+
+```lua
+logger = "vscdebuglog"
+logservice = "snlua"
+vscdbg_open = "$vscdbg_open"
+vscdbg_bps = [=[$vscdbg_bps]=]
+```
+
+然后，点击菜单：Debug-Start Debugging. 最后就可以设置断点，进行调试了。
 
 
 ##  第三方模块

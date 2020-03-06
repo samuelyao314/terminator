@@ -1,6 +1,3 @@
-[submodule "skynet"]
-	path = skynet
-	url = https://github.com/cloudwu/skynet
 [submodule "thirdparty/hotfix"]
 	path = thirdparty/hotfix
 	url = https://github.com/jinq0123/hotfix

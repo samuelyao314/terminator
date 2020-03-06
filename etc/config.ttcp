@@ -2,14 +2,14 @@
 thread = 1
 logger = nil
 harbor = 0
-lualoader = "skynet/lualib/loader.lua"
+lualoader = "lualib/loader.lua"
 bootstrap = "snlua bootstrap"   -- The service for bootstrap
 
 start = "ttcp"  -- main script
 
-lua_cpath = "luaclib/?.so;skynet/luaclib/?.so"
-lua_path =  "lualib/?.lua;lualib/3rd/?.lua;skynet/lualib/?.lua;"
+lua_cpath = "../luaclib/?.so;luaclib/?.so"
+lua_path =  "../lualib/?.lua;../lualib/3rd/?.lua;lualib/?.lua;"
 
-snax = "service/?.lua;service/?/init.lua;skynet/service/?.lua"
-luaservice = "service/?.lua;service/?/init.lua;skynet/service/?.lua"
-cpath = "cservice/?.so;skynet/cservice/?.so"
+snax = "../service/?.lua;../service/?/init.lua;service/?.lua"
+luaservice = "../service/?.lua;../service/?/init.lua;service/?.lua"
+cpath = "../cservice/?.so;cservice/?.so"
