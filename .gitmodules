@@ -13,3 +13,6 @@
 [submodule "thirdparty/luafilesystem"]
 	path = thirdparty/luafilesystem
 	url = https://github.com/keplerproject/luafilesystem/
+[submodule "skynet"]
+	path = skynet
+	url = https://github.com/colinsusie/skynet
