@@ -1,6 +1,7 @@
 local skynet = require "skynet"
 
---print = skynet.error
+-- 替换标准输出
+print = skynet.error
 
 local env = skynet.getenv("run_env")
 if env == "dev" then

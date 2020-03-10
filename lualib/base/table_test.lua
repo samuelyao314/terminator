@@ -6,7 +6,6 @@ function _G.test_contain()
     local t = {"a", "b", "c"}
     lu.assertTrue(table.contains(t, "a"))
     lu.assertFalse(table.contains(t, "d"))
-
 end
 
 

@@ -3,6 +3,12 @@
 -------------------------------------
 local os = os or {}
 
+local lfs = require "lfs"
+
+-- 返回当前工作目录
+os.getcwd = function()
+    return lfs.currentdir()
+end
 
 
 return os

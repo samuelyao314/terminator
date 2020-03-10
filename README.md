@@ -8,44 +8,44 @@ terminator 是基于 [skynet](https://github.com/cloudwu/skynet) 服务端开发
 编译项目
 
 ```shell
-    $ git clone https://github.com/samuelyao314/workspace terminator
-    $ cd terminator
-    $ make
+$ git clone https://github.com/samuelyao314/workspace terminator
+$ cd terminator
+$ make
 
 ```
 
 下一步，运行服务
 
 ```shell
-    $ ./run.sh test # test 是服务名
+$ ./run.sh test # test 是服务名
 ```
 
 
 如果需要部署，执行
 
 ```shell
-    $ make dev
+$ make dev
 ```
 
-最后，复制 deploy 目录到测试服务机器。
+最后，复制 deploy 目录到目标机器。
 
 
 ## 项目结构
 
 ```
 lualib(公共lua库)
-	bw (基于skynet的公共库)
-		hotfix (热更新机制)
+  bw (基于skynet的公共库)
+	  hotfix (热更新机制)
 	base(通用库)
 	perf(性能相关）
 	test(单元测试)
-    3rd (切记：不要在这里放文件，会被删除)
+  3rd (切记：不要在这里放文件，会被删除)
 etc(启动配置)
-    config.test  (test 服务配置)
-    config.chat  (chat 服务配置)
+  config.test  (test 服务配置)
+  config.chat  (chat 服务配置)
 service(服务入口)
-    test (简单测试服务)
-    chat  (聊天服务)
+  test (简单测试服务)
+  chat  (聊天服务)
 skynet(fork skynet项目，不作任何改动)
 tools(辅助工具)
 	deploy.py (生成部署目录)
@@ -60,10 +60,10 @@ thirdparty. (第三方依赖)
 新的项目，通常都需要创建新服务。一般情况，用模版工具生成。
 
 ```shell
-    $ python tools/new_service.py hello "just test"   # 参数1是服务名称（保证唯一），参数2是描述信息
+$ python tools/new_service.py hello "just test"   # 参数1是服务名称（保证唯一），参数2是描述信息
 ```
 
-执行后，会生成以下文件
+执行后，会生成以下文件。如果需要删除服务，手动清除以下文件。
 
 ```
 etc
@@ -79,7 +79,9 @@ service
     $ ./run.sh hello
 ```
 
-如果要清理，手动删除以上生成的文件。
+启动后，当前目录会更改为， skynet/skynet 所在的目录。
+
+
 
 
 ## 代码规范
@@ -121,7 +123,6 @@ service
 
 
 ## 配置热更新
-
 *TODO*
 
 
@@ -156,6 +157,36 @@ vscdbg_bps = [=[$vscdbg_bps]=]
 ```
 
 然后，点击菜单：Debug-Start Debugging. 最后就可以设置断点，进行调试了。
+
+## 内存泄露
+内存泄露，可以通过2次对Lua State 进行切片，比较差异，就可以得到内存是否存在泄露。
+具体的接口使用见例子 perf .
+
+``` shell
+$ ./skynet ../etc/config.perf
+# 启动后，在当前目录，这个服务会产生一个内存切片。
+# 例如产生类似这种文件：LuaMemRefInfo-All-[XXX]-[simulate_memory:00000008].txt。
+# 等待少许时间，该服务会分配一些对象
+# debug_console 服务提供了管理端工具，通过它再生成一份切片
+$ telnet 127.0.0.1 8000
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+call 8 "dump_memory",1,2    # 这个是输入, 8 代表perf服务的ID
+n	0     # 这个是返回
+<CMD OK>
+
+# 下一步，利用2个切片文件，得到内存差异
+$ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
+# 当前目录会生成一个  LuaMemRefInfo-All-[XXX]-[Compared].txt
+# 比较代码，以及这个差异，就可以知道是否存在内存泄露
+
+```
+
+具体实现细节见：[关于 Lua 内存泄漏的检测](https://www.cnblogs.com/yaukey/p/unity_lua_memory_leak_trace.html)
+
+## 火焰图
+*TODO*
 
 
 ##  第三方模块
