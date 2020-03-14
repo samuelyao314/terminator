@@ -4,4 +4,4 @@ then
     exit
 fi
 
-skynet/skynet etc/config.$1
+cd skynet; ./skynet ../etc/$1_conf.lua
