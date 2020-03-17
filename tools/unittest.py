@@ -8,7 +8,7 @@ import sys
 
 
 def run_test(lib_path, luabin, file):
-    command = 'LUA_PATH="%s/?.lua" %s %s' %(lib_path, luabin, file)
+    command = 'LUA_PATH="%s/?.lua" LUA_CPATH="luaclib/?.so" %s %s' %(lib_path, luabin, file)
     print("RUN: ", command)
     status = os.system(command)
     if status != 0:

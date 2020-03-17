@@ -3,7 +3,6 @@
 -------------------------------------
 -- define module
 local io = io or {}
-local lfs = require("lfs")
 
 --
 -- Write content to a new file.
@@ -30,12 +29,5 @@ function io.readfile(filename)
 end
 
 
---
---  Time when data was last modified.
---
-function io.get_file_mtime(path)
-    local file_time = lfs.attributes (path, "modification")
-    return file_time
-end
 
 return io

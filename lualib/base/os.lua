@@ -11,4 +11,20 @@ os.getcwd = function()
 end
 
 
+--
+--  Time when data was last modified.
+--
+function os.get_file_mtime(path)
+    local file_time, err = lfs.attributes (path, "modification")
+    return file_time, err
+end
+
+--
+-- get file size (bytes)
+--
+function os.get_file_size(path)
+    local size, err = lfs.attributes(path, "size")
+    return size, err
+end
+
 return os

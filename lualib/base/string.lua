@@ -237,5 +237,34 @@ end
 
 string.a2b_hex = string.unhexlify
 
+
+ --
+ -- Capitalize the first letter of the string.
+ --
+
+function string.capitalize(s)
+    return s:gsub("^%l", string.upper)
+end
+
+ --
+ -- Returns true if the string has a match for the plain specified pattern
+ --
+function string.contains(s, match)
+    return string.find(s, match, 1, true) ~= nil
+end
+
+
+--
+-- Returns the number of lines of text contained by the string.
+--
+function string.lines(s)
+    local trailing, n = s:gsub('.-\n', '')
+    if #trailing > 0 then
+        n = n + 1
+    end
+    return n
+end
+
+
 -- return module: string
 return string
