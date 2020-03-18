@@ -19,6 +19,10 @@ macro (add_lua_library lname)
     set_target_properties(${lname} PROPERTIES SUFFIX ${suffix})
 endmacro()
 
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -Wall -g -ggdb")
+set(CMAKE_C_FLAGS_DEBUG "-O0 -Wall -g -ggdb")
+
 set(LUA_INCLUDE_DIR  ${PROJECT_SOURCE_DIR}/skynet/3rd/lua)
 include_directories (${LUA_INCLUDE_DIR})
 

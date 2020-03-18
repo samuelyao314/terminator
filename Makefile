@@ -12,7 +12,7 @@ SKYNET_MAKEFILE=skynet/Makefile
 $(SKYNET_MAKEFILE):
 	git submodule update --init
 skynet: | $(SKYNET_MAKEFILE)
-	cd skynet && $(MAKE) $(CUR_OS)
+	cd skynet && $(MAKE) $(CUR_OS) MYCFLAGS=-g
 
 build:
 	-mkdir $@
