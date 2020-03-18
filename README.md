@@ -90,7 +90,7 @@ service
 安装完 luacheck 后 （建议用 hererock + luarocks 进行安装）
 
 ```shell
-   $ make check
+$ make check
 ```
 
 ## 单元测试
@@ -98,7 +98,7 @@ service
 执行单元测试
 
 ```shell
-	$ make test
+$ make test
 ```
 
 ## 代码热更新
