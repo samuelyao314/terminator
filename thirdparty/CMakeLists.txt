@@ -27,6 +27,3 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/lua-protobuf/protoc.lua
 # https://github.com/jinq0123/hotfix
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/hotfix/lua/hotfix
         DESTINATION ${LUA_3RD_PATH})
-
-# https://github.com/antirez/sds
-add_library(sds sds/sds.c)

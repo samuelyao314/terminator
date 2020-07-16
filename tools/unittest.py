@@ -14,8 +14,8 @@ def run_test(lib_path, luabin, file):
     if status != 0:
         raise Exception("UNITEST FAILED, file: %s" %(file))
 
-def main(luabin, lib_path):
-    for root, dirs, files in os.walk(lib_path, topdown=True):
+def main(luabin, lib_path, rootdir):
+    for root, dirs, files in os.walk(rootdir, topdown=True):
         for file in files:
             if file.endswith('_test.lua'):
                 file_path = os.path.join(root, file)
@@ -25,4 +25,7 @@ def main(luabin, lib_path):
 if __name__ == '__main__':
     luabin = sys.argv[1];
     lib_path = sys.argv[2]
-    main(luabin, lib_path)
+    rootdir = "."
+    if len(sys.argv) >= 4:
+        rootdir = sys.argv[3]
+    main(luabin, lib_path, rootdir)

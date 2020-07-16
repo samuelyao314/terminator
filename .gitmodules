@@ -16,6 +16,3 @@
 [submodule "skynet"]
 	path = skynet
 	url = https://github.com/colinsusie/skynet
-[submodule "thirdparty/sds"]
-	path = thirdparty/sds
-	url = https://github.com/antirez/sds

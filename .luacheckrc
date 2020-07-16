@@ -7,6 +7,7 @@ new_globals = {
 
 include_files = {
     "lualib/*",
+    'lualib-src/lru/lru_test.lua',
 }
 
 exclude_files = {
