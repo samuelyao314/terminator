@@ -32,26 +32,25 @@ $ make dev
 
 ## 项目结构
 
-```
+```txt
 lualib(公共lua库)
   bw (基于skynet的公共库)
 	  hotfix (热更新机制)
 	base(通用库)
 	perf(性能相关）
 	test(单元测试)
-  3rd (切记：不要在这里放文件，会被删除)
 etc(启动配置)
   config.test  (test 服务配置)
   config.chat  (chat 服务配置)
 service(服务入口)
   test (简单测试服务)
   chat  (聊天服务)
-skynet(fork skynet项目，不作任何改动)
+skynet
 tools(辅助工具)
 	deploy.py (生成部署目录)
 	unittest.py. (单元测试驱动)
 	new_service.py  (创建自定义服务)
-thirdparty. (第三方依赖)
+thirdparty (第三方依赖)
 
 ```
 
@@ -79,13 +78,13 @@ service
     $ ./run.sh hello
 ```
 
-启动后，当前目录会更改为， skynet/skynet 所在的目录。
+
 
 
 
 
 ## 代码规范
-使用 luacheck进行代码质量检查，配置文件.luacheckrc. 
+使用 luacheck进行静态检查，配置文件.luacheckrc. 
 
 安装完 luacheck 后 （建议用 hererock + luarocks 进行安装）
 
@@ -94,7 +93,7 @@ $ make check
 ```
 
 ## 单元测试
-单元测试文件，  是以   xx_test.lua 命名的文件。 
+单元测试文件，  是  xx_test.lua 命名的文件。 
 执行单元测试
 
 ```shell
@@ -120,10 +119,6 @@ $ make test
 ```
 
 更多细节看  services/service/hotfix.
-
-
-## 配置热更新
-*TODO*
 
 
 ## 单步调试
@@ -159,7 +154,7 @@ vscdbg_bps = [=[$vscdbg_bps]=]
 然后，点击菜单：Debug-Start Debugging. 最后就可以设置断点，进行调试了。
 
 ## 内存泄露
-内存泄露，可以通过2次对Lua State 进行切片，比较差异，就可以得到内存是否存在泄露。
+内存泄露，可以通过2次对Lua State 进行切片，比较差异，进行分析。
 具体的接口使用见例子 perf .
 
 ``` shell
@@ -187,6 +182,8 @@ $ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
 
 ## 火焰图
 *TODO*
+
+* 参考： [skynet 火焰图的新方法](https://spin6lock.github.io/2020/05/24/skynet%E7%81%AB%E7%84%B0%E5%9B%BE%E7%9A%84%E6%96%B0%E6%96%B9%E6%B3%95.html)
 
 
 ##  第三方模块

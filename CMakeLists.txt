@@ -8,7 +8,6 @@ endif()
 
 set(CXX_FLAGS
  -g
- # -DVALGRIND
  -DCHECK_PTHREAD_RETURN_VALUE
  -D_FILE_OFFSET_BITS=64
  -Wall
@@ -20,7 +19,6 @@ set(CXX_FLAGS
  -Wshadow
  -Wwrite-strings
  -march=native
- # -MMD
  -std=c++11
  -rdynamic
  )
