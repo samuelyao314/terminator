@@ -51,8 +51,8 @@ endmacro()
 set(LUA_INCLUDE_DIR  ${PROJECT_SOURCE_DIR}/skynet/3rd/lua)
 include_directories (${LUA_INCLUDE_DIR})
 
-#set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/luaclib)
+# so 文件（Lua C模块）输出目录
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/luaclib)
 
 add_subdirectory(thirdparty)
 add_subdirectory(lualib-src)
