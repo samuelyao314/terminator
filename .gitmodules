@@ -16,3 +16,6 @@
 [submodule "thirdparty/pystring"]
 	path = thirdparty/pystring
 	url = https://github.com/imageworks/pystring
+[submodule "skynet"]
+	path = skynet
+	url = https://github.com/cloudwu/skynet
