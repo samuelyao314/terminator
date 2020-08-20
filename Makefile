@@ -36,3 +36,6 @@ test:
 
 check:
 	luacheck --config .luacheckrc .
+
+update:
+	git submodule foreach git submodule update
