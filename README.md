@@ -2,7 +2,7 @@
 terminator 是基于 [skynet](https://github.com/cloudwu/skynet) 服务端开发方案.
 
 ## 编译和运行
-项目支持在 Linux 和 MacOS 下编译。 
+项目支持在 Linux 和 MacOS 下编译。
 需要提前安装构建工具 cmake,  以及 python.
 
 编译项目
@@ -34,11 +34,11 @@ $ make dev
 
 ```txt
 lualib(公共lua库)
-  bw (基于skynet的公共库)
-	  hotfix (热更新机制)
 	base(通用库)
 	perf(性能相关）
 	test(单元测试)
+  bw (基于skynet的公共库)
+	  hotfix (热更新机制)
 etc(启动配置)
   config.test  (test 服务配置)
   config.chat  (chat 服务配置)
@@ -84,7 +84,7 @@ service
 
 
 ## 代码规范
-使用 luacheck进行静态检查，配置文件.luacheckrc. 
+使用 luacheck进行静态检查，配置文件.luacheckrc.
 
 安装完 luacheck 后 （建议用 hererock + luarocks 进行安装）
 
@@ -93,7 +93,7 @@ $ make check
 ```
 
 ## 单元测试
-单元测试文件，  是  xx_test.lua 命名的文件。 
+单元测试文件，  是  xx_test.lua 命名的文件。
 执行单元测试
 
 ```shell
@@ -122,7 +122,7 @@ $ make test
 
 
 ## 单步调试
-结合 VSCode 的插件[Skynet Debugger](https://github.com/colinsusie/skynetda), 本项目支持单步调试。 
+结合 VSCode 的插件[Skynet Debugger](https://github.com/colinsusie/skynetda), 本项目支持单步调试。
 
 例如服务 chat，进行单步调试。 VSCode 的配置文件 launch.json 设置如下
 
@@ -186,12 +186,15 @@ $ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
 * 参考： [skynet 火焰图的新方法](https://spin6lock.github.io/2020/05/24/skynet%E7%81%AB%E7%84%B0%E5%9B%BE%E7%9A%84%E6%96%B0%E6%96%B9%E6%B3%95.html)
 
 
-##  第三方模块
+##  Lua 第3方模块
 * [lua-zset](https://github.com/xjdrew/lua-zset), Lua 的sorted set实现。基于Redis 的skiplist源码
 * [lua-cjson](https://github.com/openresty/lua-cjson), 高性能的JSON解析器和编码器
 * [lua-cmsgpack](https://github.com/antirez/lua-cmsgpack), C语言实现的msgpack解析器和编码器
 * [luafilesystem](https://github.com/keplerproject/luafilesystem), lua的一个专门用来进行文件操作的库
 * [lua-protobuf](https://github.com/starwing/lua-protobuf/), XLua 作者实现的PB解析库。[文档在这里](https://zhuanlan.zhihu.com/p/26014103)
+
+## C++ 第3方模块
+* [pystring](https://github.com/imageworks/pystring), 参考Python，实现的字符串接口
 
 ## 参考资料
 * [bewater](https://github.com/zhandouxiaojiji/bewater),  skynet通用模块

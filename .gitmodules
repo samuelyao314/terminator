@@ -16,3 +16,6 @@
 [submodule "skynet"]
 	path = skynet
 	url = https://github.com/colinsusie/skynet
+[submodule "thirdparty/pystring"]
+	path = thirdparty/pystring
+	url = https://github.com/imageworks/pystring
