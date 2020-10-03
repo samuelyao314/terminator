@@ -22,6 +22,7 @@ clean:
 	-rm -rf deploy
 	-rm -rf build
 	-rm -rf lualib/3rd/*
+	-rm -f luaclib/*so
 	cd skynet && make clean
 
 

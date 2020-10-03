@@ -160,8 +160,7 @@ $ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
 * [luafilesystem](https://github.com/keplerproject/luafilesystem), lua的一个专门用来进行文件操作的库
 * [lua-protobuf](https://github.com/starwing/lua-protobuf/), XLua 作者实现的PB解析库。[文档在这里](https://zhuanlan.zhihu.com/p/26014103)
 
-## C++ 第3方模块
-* [pystring](https://github.com/imageworks/pystring), 参考Python，实现的字符串接口
+## C 第3方模块
 
 ## 参考资料
 * [bewater](https://github.com/zhandouxiaojiji/bewater),  skynet通用模块

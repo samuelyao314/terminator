@@ -96,19 +96,7 @@ local function test_protobuf()
     assert(data2.contacts[1].phonenumber == data.contacts[1].phonenumber)
 end
 
-local function test_lru()
-    skynet.error("=============== lru ================")
-    local lru = require "lru"
-    local cache = lru.new(3, "integer", "map")
-    cache:set(1, "1")
-    cache:set(2, {2})
-    cache:set(3, 3)
-    cache:set(4, 14)
-    skynet.error("cache:count():", cache:count())
-    for k, v in pairs(cache) do
-        skynet.error("cache: ", k, v)
-    end
-end
+
 
 skynet.start(function()
     skynet.newservice("debug_console",8000)
@@ -119,5 +107,4 @@ skynet.start(function()
     test_msgpack()
 	test_lfs()
     test_protobuf()
-    test_lru()
 end)

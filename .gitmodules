@@ -13,9 +13,6 @@
 [submodule "thirdparty/luafilesystem"]
 	path = thirdparty/luafilesystem
 	url = https://github.com/keplerproject/luafilesystem/
-[submodule "thirdparty/pystring"]
-	path = thirdparty/pystring
-	url = https://github.com/imageworks/pystring
 [submodule "skynet"]
 	path = skynet
 	url = https://github.com/cloudwu/skynet
