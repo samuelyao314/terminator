@@ -2,7 +2,7 @@
 terminator 是基于 [skynet](https://github.com/cloudwu/skynet) 服务端开发方案.
 
 ## 编译和运行
-项目支持在 Linux 和 MacOS 下编译。
+项目只支持在 Linux 下编译和运行。
 需要提前安装构建工具 cmake,  以及 python.
 
 编译项目
