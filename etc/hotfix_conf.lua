@@ -14,4 +14,4 @@ luaservice = "../service/?.lua;../service/?/init.lua;service/?.lua"
 cpath = "../cservice/?.so;cservice/?.so"
 
 preload="../lualib/bw/preload.lua"
-run_env="dev"  --开发环境
+need_hotfix=true  -- 开启热更新

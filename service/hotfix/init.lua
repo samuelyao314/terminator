@@ -5,7 +5,7 @@ local skynet = require "skynet"
 local mod = import("mod")
 
 local function print_info()
-    -- 如果发送热更新， 打印的结果不一样. 这里模拟了使用场景
+    -- 如果mod 文件有修改， 打印的结果会改变. 
     mod.func()
     skynet.timeout(500,  print_info)
 end

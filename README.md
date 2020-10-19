@@ -79,10 +79,6 @@ service
 ```
 
 
-
-
-
-
 ## 静态检测
 使用 luacheck进行静态检查，配置文件.luacheckrc.
 
@@ -100,6 +96,7 @@ $ make check
 $ make test
 ```
 
+
 ## 代码热更新
 热更新机制可以在开发阶段，帮忙更好地调试代码。
 因为Lua的灵活性以及游戏逻辑的复杂，热更新很难做完备，因此不建议应用在生产环境。
@@ -109,7 +106,7 @@ $ make test
 
 ```lua
 	# config 文件
-	run_env="dev"
+	need_hotfix=true
 ```
 
 接着，**import**  加载的文件，一旦文件被修改，就会自动热加载。
