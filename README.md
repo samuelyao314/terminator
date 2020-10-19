@@ -83,7 +83,7 @@ service
 
 
 
-## 代码规范
+## 静态检测
 使用 luacheck进行静态检查，配置文件.luacheckrc.
 
 安装完 luacheck 后 （建议用 hererock + luarocks 进行安装）
@@ -146,6 +146,40 @@ $ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
 ```
 
 具体实现细节见：[关于 Lua 内存泄漏的检测](https://www.cnblogs.com/yaukey/p/unity_lua_memory_leak_trace.html)
+
+
+## 单步调试
+结合 VSCode 的插件[Skynet Debugger](https://github.com/colinsusie/skynetda), 本项目支持单步调试。
+
+例如服务 chat，进行单步调试。 VSCode 的配置文件 launch.json 设置如下
+
+```json
+{
+    // 这个版本号，根据实际的插件版本号，进行修改
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "skynet debugger",
+            "type": "lua",
+            "request": "launch",
+            "program": "${workspaceFolder}/skynet",
+            "config": "../etc/config.chat"
+        }
+    ]
+}
+```
+
+启动配置 config.chat 里，确定有以下4行配置
+
+```lua
+logger = "vscdebuglog"
+logservice = "snlua"
+vscdbg_open = "$vscdbg_open"
+vscdbg_bps = [=[$vscdbg_bps]=]
+```
+
+然后，点击菜单：Debug-Start Debugging. 最后就可以设置断点，进行调试了。
+
 
 ## 火焰图
 *TODO*
