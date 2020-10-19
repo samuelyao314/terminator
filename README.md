@@ -122,8 +122,8 @@ $ make test
 具体的接口使用见例子 perf .
 
 ``` shell
-$ ./skynet ../etc/config.perf
-# 启动后，在当前目录，这个服务会产生一个内存切片。
+$ ./run.sh perf
+# 启动后，在skynet 目录，这个服务会产生一个内存切片。
 # 例如产生类似这种文件：LuaMemRefInfo-All-[XXX]-[simulate_memory:00000008].txt。
 # 等待少许时间，该服务会分配一些对象
 # debug_console 服务提供了管理端工具，通过它再生成一份切片
