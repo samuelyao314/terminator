@@ -10,31 +10,34 @@ import multiprocessing
 # cpu 核数
 CPU_COUNT = multiprocessing.cpu_count()
 
-ETC_TEMLATE = """
--- {0}
-thread = {1}
+ETC_TEMLATE = """-- {0}
+thread = 1     -- 启动多少个线程
+harbor = 0     -- 单节点
+lualoader = "lualib/loader.lua"   -- 不建议修改
+bootstrap = "snlua bootstrap"   -- 不建议修改
+
+start = "{2}"  -- 入口脚本
+
+-- 日志配置，默认打印到标准输出
+logservice = "logger"
 logger = nil
-harbor = 0
-lualoader = "skynet/lualib/loader.lua"
-bootstrap = "snlua bootstrap"   -- The service for bootstrap
 
-start = "{2}"
+lua_cpath = "../luaclib/?.so;luaclib/?.so"
+lua_path =  "../lualib/?.lua;../lualib/3rd/?.lua;lualib/?.lua;"
 
-lua_cpath = "luaclib/?.so;skynet/luaclib/?.so"
-lua_path =  "lualib/?.lua;skynet/lualib/?.lua;"
-cpath = "cservice/?.so;skynet/cservice/?.so"
-luaservice = "service/?/init.lua;skynet/service/?.lua"
-
-preload="lualib/bw/preload.lua"
-run_env="dev"
+snax = "../service/?.lua;../service/?/init.lua;service/?.lua"
+luaservice = "../service/?.lua;../service/?/init.lua;service/?.lua;examples/?.lua"
+cpath = "../cservice/?.so;cservice/?.so"
 """
 
 def generate_etc(svr_name, infomation):
-    content = ETC_TEMLATE.format(svr_name, CPU_COUNT, information)
+    content = ETC_TEMLATE.format(information, CPU_COUNT, svr_name)
     path = "etc"
     if not os.path.exists(path):
-        os.makedirs(path)
-    filename = os.path.join(path, "config.%s"  %(svr_name))
+        #os.makedirs(path)
+        print("root dir must has 'etc' directory\n")
+        sys.exit(1)
+    filename = os.path.join(path, "%s_conf.lua"  %(svr_name))
     with open(filename, "w") as fp:
         fp.write(content)
 
@@ -74,9 +77,5 @@ if __name__ == '__main__':
         print("例如: python new_service.py hellosvr 测试程序\n")
         sys.exit(0)
     svr_name = sys.argv[1]
-    # 服务名用 svr, 避免跟 lib 库名称冲突
-    if not svr_name.endswith("svr"):
-        print("<server_name> must end with 'svr'\n")
-        sys.exit(0)
     information = sys.argv[2]
     main(svr_name, information)
