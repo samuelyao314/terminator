@@ -5,7 +5,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "DEBUG")
 endif()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -ggdb")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -g -fno-omit-frame-pointer")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     set(CMAKE_SHARED_LINKER_FLAGS "-undefined dynamic_lookup")

@@ -12,7 +12,7 @@ SKYNET_MAKEFILE=skynet/Makefile
 $(SKYNET_MAKEFILE):
 	git submodule update --init
 skynet: | $(SKYNET_MAKEFILE)
-	cd skynet && $(MAKE) $(CUR_OS) # MYCFLAGS=-g
+	cd skynet && $(MAKE) $(CUR_OS) MYCFLAGS="-fno-omit-frame-pointer "
 
 build:
 	-mkdir $@

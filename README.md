@@ -166,7 +166,7 @@ $ 3rd/lua/lua ../tools/compare_memory_snapshot.lua LuaMemRefInfo-All*
 }
 ```
 
-启动配置 config.chat 里，确定有以下4行配置
+配置 config.chat 里，加了以下4行配置
 
 ```lua
 logger = "vscdebuglog"
@@ -195,4 +195,3 @@ vscdbg_bps = [=[$vscdbg_bps]=]
 
 ## 参考资料
 * [bewater](https://github.com/zhandouxiaojiji/bewater),  skynet通用模块
-* [RillServer](https://github.com/cloudfreexiao/RillServer)，skynet 游戏框架
