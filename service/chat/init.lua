@@ -1,5 +1,4 @@
---  实现 TTCP 服务
---  类似 https://github.com/chenshuo/muduo/blob/master/examples/ace/ttcp/ttcp_blocking.cc
+--  实现：聊天服务器
 local skynet = require "skynet"
 local socket = require "skynet.socket"
 local table = require "base.table"
