@@ -12,9 +12,3 @@ lua_path =  "../lualib/?.lua;../lualib/3rd/?.lua;lualib/?.lua;"
 snax = "../service/?.lua;../service/?/init.lua;service/?.lua"
 luaservice = "../service/?.lua;../service/?/init.lua;service/?.lua"
 cpath = "../cservice/?.so;cservice/?.so"
-
--- 单步调试
-logger = "vscdebuglog"
-logservice = "snlua"
-vscdbg_open = "$vscdbg_open"
-vscdbg_bps = [=[$vscdbg_bps]=]

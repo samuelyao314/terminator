@@ -1,5 +1,14 @@
 --  功能: gate/watchdog/agent三剑客
 --  测试方法：~/terminator/skynet]$3rd/lua/lua examples/client.lua
+--  测试输入：
+--[[
+	msg     Welcome to skynet, I will send heartbeat every 5 sec.
+	RESPONSE        2
+	hello         # 需要查询的 key 值
+	Request:        3
+	RESPONSE        3
+	result  world
+--]]
 
 local skynet = require "skynet"
 local sprotoloader = require "sprotoloader"
