@@ -190,8 +190,8 @@ vscdbg_bps = [=[$vscdbg_bps]=]
 * [lua-cmsgpack](https://github.com/antirez/lua-cmsgpack), C语言实现的msgpack解析器和编码器
 * [luafilesystem](https://github.com/keplerproject/luafilesystem), lua的一个专门用来进行文件操作的库
 * [lua-protobuf](https://github.com/starwing/lua-protobuf/), XLua 作者实现的PB解析库。[文档在这里](https://zhuanlan.zhihu.com/p/26014103)
+* [lua-kcp](https://github.com/linxiaolong/lua-kcp), UDP 可靠协议
 
-## C 第3方模块
 
 ## 参考资料
 * [bewater](https://github.com/zhandouxiaojiji/bewater),  skynet通用模块
