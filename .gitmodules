@@ -16,3 +16,6 @@
 [submodule "skynet"]
 	path = skynet
 	url = https://github.com/colinsusie/skynet
+[submodule "thirdparty/skynet-rabbitmq"]
+	path = thirdparty/skynet-rabbitmq
+	url = https://github.com/samuelyao314/skynet-rabbitmq

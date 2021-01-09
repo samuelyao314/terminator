@@ -2,9 +2,9 @@
 
 all: skynet build
 
-CUR_OS="linux"
+PLAT="linux"
 ifeq ($(shell uname), Darwin)
-	CUR_OS="macosx"
+	PLAT="macosx"
 endif
 
 
@@ -12,7 +12,7 @@ SKYNET_MAKEFILE=skynet/Makefile
 $(SKYNET_MAKEFILE):
 	git submodule update --init
 skynet: | $(SKYNET_MAKEFILE)
-	cd skynet && $(MAKE) $(CUR_OS) MYCFLAGS="-fno-omit-frame-pointer "
+	cd skynet && $(MAKE) $(PLAT) MYCFLAGS="-fno-omit-frame-pointer "
 
 build:
 	-mkdir $@
